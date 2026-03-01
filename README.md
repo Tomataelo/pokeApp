@@ -10,17 +10,17 @@ W aplikacji korzystam z takich bibliotek jak np. serializer do wygodnego mapowan
 
 Moje endpointy to:
 
-POST: /banned/ - tworzy zbanowanego pokemona i potrzeba tylko w jsonie pola name
-GET: /banned/all - pobiera wszystkie zbanowane pokemony
-DELETE: /banned/{name} - usuwa danego zbanowanego pokemona
+- POST: /banned/ - tworzy zbanowanego pokemona i potrzeba tylko w jsonie pola name
+- GET: /banned/all - pobiera wszystkie zbanowane pokemony
+- DELETE: /banned/{name} - usuwa danego zbanowanego pokemona
 
 Na potrzeby zadania dane zwracane z pokeApi to name,weight i height, nie widziałem sensu żeby zwracało całe dane ponieważ pokemony tworzone lokalnie też muszą mieć takie same pola a uzupełnianie tych pól to troche strata czasu była.
 
-GET: /info/{pokemonNames} - pobiera info z bazy danych apki lub z pokeApi odnośnie imion danych pokemonów, pomija zbanowane pokemony oraz pole 'own' informuje czy jest to pokemon z poke api czy stworzony poprzez aplikacje
+-GET: /info/{pokemonNames} - pobiera info z bazy danych apki lub z pokeApi odnośnie imion danych pokemonów, pomija zbanowane pokemony oraz pole 'own' informuje czy jest to pokemon z poke api czy stworzony poprzez aplikacje
 
 {identifier} - to id lub nazwa
 
-POST: /pokemon/ - tworzy pokemona, potrzebne pola to: name, weight, height 
-GET: /pokemon/{identifier} - pobiera danego pokemona z bazy apki
-DELETE: /pokemon/{identifier} - usuwa danego pokemona z bazy apki
-PUT: /pokemon/{identifier} - robi update dla danego pokemona z bazy apki, pola które można modyfikować to: name, weight, height
+- POST: /pokemon/ - tworzy pokemona, potrzebne pola to: name, weight, height 
+- GET: /pokemon/{identifier} - pobiera danego pokemona z bazy apki
+- DELETE: /pokemon/{identifier} - usuwa danego pokemona z bazy apki
+- PUT: /pokemon/{identifier} - robi update dla danego pokemona z bazy apki, pola które można modyfikować to: name, weight, height
