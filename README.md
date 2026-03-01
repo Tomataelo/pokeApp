@@ -1,5 +1,5 @@
 Witam, chciałbym na początku napisać dlaczego wybrałem framework Symfony zamiast Laravela - wybrałem Symfony ponieważ pracuje z nim na co dzień i znam go dobrze, w zadaniu został postawiony limit czasowy więc pomyślałem że zrobie to szybciej w frameworku który znam bardziej. 
-Prosze o wyrozumiałość w tej kwestii. Nie będzie dla mnie problemem już w pracy przejście na Laravela.
+Prosze o zrozumienie w tej kwestii. Nie będzie dla mnie problemem już w pracy przejście na Laravela.
 
 W jaki sposób uruchomić aplikacje?:
 - Wybieramy miejsce gdzie ma być apka i w cmd: git clone https://github.com/Tomataelo/pokeApp.git .
