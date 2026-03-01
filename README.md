@@ -16,7 +16,7 @@ Moje endpointy to:
 
 Na potrzeby zadania dane zwracane z pokeApi to name,weight i height, nie widziałem sensu żeby zwracało całe dane ponieważ pokemony tworzone lokalnie też muszą mieć takie same pola a uzupełnianie tych pól to troche strata czasu była.
 
--GET: /info/{pokemonNames} - pobiera info z bazy danych apki lub z pokeApi odnośnie imion danych pokemonów, pomija zbanowane pokemony oraz pole 'own' informuje czy jest to pokemon z poke api czy stworzony poprzez aplikacje
+- GET: /info/{pokemonNames} - pobiera info z bazy danych apki lub z pokeApi odnośnie imion danych pokemonów, pomija zbanowane pokemony oraz pole 'own' informuje czy jest to pokemon z poke api czy stworzony poprzez aplikacje
 
 {identifier} - to id lub nazwa
 
