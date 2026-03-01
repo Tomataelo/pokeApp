@@ -37,6 +37,6 @@ class PokeApiClient implements ApiClientInterface
 
     private function handleApiError(GuzzleException $e)
     {
-        throw new ApiRequestException("HTTP Status Code: ".$e->getCode()." | Error: ".$e->getMessage());
+        throw new ApiRequestException("HTTP Status Code: ".$e->getCode()." | Error: ".$e->getMessage(), $e->getCode());
     }
 }

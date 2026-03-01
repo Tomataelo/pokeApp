@@ -4,30 +4,37 @@ namespace App\Dto;
 
 class PokemonDto
 {
-    public function __construct(
-        public string $name {
-            get {
-                return $this->name;
-            }
-            set {
-                $this->name = $value;
-            }
-        },
-        public int $weight {
-            get {
-                return $this->weight;
-            }
-            set {
-                $this->weight = $value;
-            }
-        },
-        public int $height {
-            get {
-                return $this->height;
-            }
-            set {
-                $this->height = $value;
-            }
-        },
-    ){}
+    private ?string $name = null;
+    private ?int $weight = null;
+    private ?int $height = null;
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = strtolower($name);
+    }
+
+    public function getWeight(): ?int
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(int $weight): void
+    {
+        $this->weight = $weight;
+    }
+
+    public function getHeight(): ?int
+    {
+        return $this->height;
+    }
+
+    public function setHeight(int $height): void
+    {
+        $this->height = $height;
+    }
 }

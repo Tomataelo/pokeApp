@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Dto\BannedPokemonDto;
+use App\Dto\PokemonDto;
 use App\Security\ApiKeyValidator;
 use App\Service\Banned\BannedService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,7 +33,7 @@ class BannedController extends AbstractController
         }
 
         try {
-            $bannedPokemon = $this->serializer->deserialize($request->getContent(), BannedPokemonDto::class, 'json');
+            $bannedPokemon = $this->serializer->deserialize($request->getContent(), PokemonDto::class, 'json');
         } catch (ExceptionInterface $e) {
             return new JsonResponse([$e->getMessage()]);
         }

@@ -2,7 +2,7 @@
 
 namespace App\Service\Banned;
 
-use App\Dto\BannedPokemonDto;
+use App\Dto\PokemonDto;
 use App\Entity\Pokemon;
 use App\Repository\PokemonRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -13,10 +13,10 @@ readonly class BannedService
         private PokemonRepository $pokemonRepository,
     ){}
 
-    public function create(BannedPokemonDto $bannedPokemonDto): int
+    public function create(PokemonDto $bannedPokemonDto): int
     {
         $newPokemon = new Pokemon();
-        $newPokemon->setName($bannedPokemonDto->name);
+        $newPokemon->setName($bannedPokemonDto->getName());
         $newPokemon->setIsBanned(1);
 
         $this->pokemonRepository->save($newPokemon);

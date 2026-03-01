@@ -4,6 +4,8 @@ namespace App\Api\PokeApi;
 
 use App\Api\ApiClientInterface;
 use App\Api\ApiProviderInterface;
+use App\Exception\ApiRequestException;
+
 
 readonly class PokeApiProvider implements ApiProviderInterface
 {
@@ -21,9 +23,23 @@ readonly class PokeApiProvider implements ApiProviderInterface
                 'name' => $response['name'],
                 'height' => $response['height'],
                 'weight' => $response['weight'],
+                'own' => 0
             ];
         }
 
         return $result;
+    }
+
+    public function getPokemonByName(string $identifier): bool
+    {
+        try {
+            $this->apiClient->get('pokemon/' . $identifier);
+        } catch (ApiRequestException $e) {
+            if ($e->getCode() === 404) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
