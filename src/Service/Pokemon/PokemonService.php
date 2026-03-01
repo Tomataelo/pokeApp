@@ -42,12 +42,18 @@ readonly class PokemonService
             return true;
         }
 
-        $isExistInPokeApi = $this->apiProvider->getPokemonByName($name);
+        $isExistInPokeApi = $this->apiProvider->getPokemon($name);
         if ($isExistInPokeApi) {
             return true;
         }
 
         return false;
+    }
+
+    public function isPokemonExistInDb(string $name): bool|Pokemon
+    {
+        $pokemon = $this->pokemonRepository->getPokemonByName($name);
+        return $pokemon ?? false;
     }
 
     public function getPokemon(string $identifier): ?Pokemon

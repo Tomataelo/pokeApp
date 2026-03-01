@@ -19,3 +19,7 @@ services:
             MYSQL_ROOT_PASSWORD: hardpassword_secret
         ports:
             -   "3306:3306"
+    redis:
+        image: redis:alpine
+        ports:
+            - "6379:6379"

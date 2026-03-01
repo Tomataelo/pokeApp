@@ -44,6 +44,11 @@ class PokemonRepository extends ServiceEntityRepository
         return (bool) $this->findOneBy(['name' => $pokemonName, 'is_banned' => false]);
     }
 
+    public function getPokemonByName(string $pokemonName): ?Pokemon
+    {
+        return $this->findOneBy(['name' => $pokemonName, 'is_banned' => false]);
+    }
+
     //    /**
     //     * @return Pokemon[] Returns an array of Pokemon objects
     //     */

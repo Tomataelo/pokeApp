@@ -23,3 +23,7 @@ services:
     App\Security\ApiKeyValidator:
         arguments:
             $apiKey: '%env(API_SECRET_KEY)%'
+
+    Predis\Client:
+        arguments:
+            - '%env(REDIS_URL)%'
