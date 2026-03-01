@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Dto\BannedPokemonDto;
 use App\Dto\PokemonDto;
 use App\Security\ApiKeyValidator;
 use App\Service\Banned\BannedService;
