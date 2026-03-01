@@ -8,7 +8,9 @@ W jaki sposób uruchomić aplikacje?:
 
 W aplikacji korzystam z takich bibliotek jak np. serializer do wygodnego mapowania body requesta na obiekty DTO oraz na odwrót, używam także predis'a do wygodnego korzystania z redisa (jako cache), korzystam także z guzzle http jako klienta http do łączenia z poke api.
 
-Moje endpointy to:
+Endpointy:
+
+/banned oraz /pokemon posiadają walidacje
 
 - POST: /banned/ - tworzy zbanowanego pokemona i potrzeba tylko w jsonie pola name
 - GET: /banned/all - pobiera wszystkie zbanowane pokemony
