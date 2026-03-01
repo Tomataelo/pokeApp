@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+    web:
+        build: .
+        ports:
+            - "8080:80"
+        volumes:
+            - .:/var/www/html
+        depends_on:
+            -   db
+
+    db:
+        image: mysql:9.2.0
+        environment:
+            MYSQL_DATABASE: poke_app
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: hardpassword
+            MYSQL_ROOT_PASSWORD: hardpassword_secret
+        ports:
+            -   "3306:3306"
