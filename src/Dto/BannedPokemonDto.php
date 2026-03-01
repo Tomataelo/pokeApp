@@ -10,7 +10,7 @@ class BannedPokemonDto
                 return $this->name;
             }
             set {
-                $this->name = $value;
+                $this->name = strtolower($value);
             }
         },
     ) {}

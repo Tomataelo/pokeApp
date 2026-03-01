@@ -22,13 +22,8 @@ class InfoController extends AbstractController
     public function info(string $pokemonNames): JsonResponse
     {
         $pokemonNames = $this->bannedService->removeBannedPokemons(explode(',', $pokemonNames));
+        $serialized = $this->serializer->serialize($this->apiProvider->getPokemonsInfo($pokemonNames), 'json');
 
-        var_dump($pokemonNames);
-
-//        $serialized = $this->serializer->serialize($this->apiProvider->getPokemonsInfo($pokemonNames), 'json');
-//
-//        return new JsonResponse($serialized, 200, [], true);
-
-        return $this->json('elo');
+        return new JsonResponse($serialized, 200, [], true);
     }
 }

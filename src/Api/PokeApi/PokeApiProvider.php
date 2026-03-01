@@ -13,10 +13,17 @@ readonly class PokeApiProvider implements ApiProviderInterface
 
     public function getPokemonsInfo(array $pokemonNames): array
     {
-        $pokemonData = $this->apiClient->get('pokemon/'.$pokemonNames);
+        $result = [];
+        foreach ($pokemonNames as $pokemonName) {
+            $response = $this->apiClient->get('pokemon/'.$pokemonName);
 
+            $result[] = [
+                'name' => $response['name'],
+                'height' => $response['height'],
+                'weight' => $response['weight'],
+            ];
+        }
 
-
-        return ;
+        return $result;
     }
 }

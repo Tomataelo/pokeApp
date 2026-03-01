@@ -43,6 +43,13 @@ readonly class BannedService
 
     public function removeBannedPokemons(array $pokemonNames): array
     {
+        if (empty($pokemonNames)) {
+            return [];
+        }
 
+        $bannedPokemons = $this->pokemonRepository->findBy(['is_banned' => true]);
+        $bannedNames = array_map(fn($pokemon) => $pokemon->getName(), $bannedPokemons);
+
+        return array_values(array_filter($pokemonNames, fn($name) => !in_array(strtolower($name), $bannedNames)));
     }
 }
